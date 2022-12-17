@@ -1,0 +1,23 @@
+
+.container{
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: rgb(27, 26, 26);
+    h2{
+        color: white;
+    }
+    .row{
+        background-color: rgba(27, 26, 26, 0.122);
+        border-radius: 20px;
+        .col{
+            img{
+                max-width: 100%;
+                display: block;
+            }
+            .card-body{
+                height: 170px;
+                overflow: auto;
+            }
+        }
+    }
+}
