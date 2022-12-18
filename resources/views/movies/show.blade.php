@@ -13,7 +13,6 @@
                                 <h5 class="card-title">{{ $movie->title }}</h5>
                                 <p class="card-text">{{ $movie->original_title }}</p>
                                 <p class="card-text">{{ $movie->vote }}/10</p>
-                                <a href="{{ route('movies.index') }}">Show all movies</a>
                             </div>
                         </div>
                     </div>

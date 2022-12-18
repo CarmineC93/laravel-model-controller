@@ -13,4 +13,22 @@ class PageController extends Controller
         $movies = Movie::all();
         return view('home', compact('movies'));
     }
+
+    public function movies()  //probabilmente non necessaria
+    {
+        $movies = Movie::all();
+        return view('movies.index', compact('movies'));
+    }
+
+    public function show($movieIndex)
+    {
+        $movies = Movie::all();
+
+        if ($movieIndex >= 0 && $movieIndex < count($movies)) {
+            $singleMovie = $movies[$movieIndex];
+            return view('movies.show', compact('movies', 'singleMovie'));
+        } else {
+            return abort(404);
+        }
+    }
 }
