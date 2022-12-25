@@ -11,7 +11,9 @@
                         <h5 class="card-title">{{ $movie->title }}</h5>
                         <p class="card-text">{{ $movie->original_title }}</p>
                         <p class="card-text">{{ $movie->vote }}/10</p>
-                        <a href="{{ route('movies.show', $index) }}">Show movie's details</a>
+                        <a href="{{ route('movies.show', $movie->id) }}">Show movie's details</a>
+                        {{-- non corretto usare l'index, ma era possibile ugualmente al posto del $movie->id --}}
+                        {{-- <a href="{{ route('movies.show', $index) }}">Show movie's details</a> --}}
                     </div>
                 </div>
             </div>

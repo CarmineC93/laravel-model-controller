@@ -22,9 +22,16 @@ class PageController extends Controller
         return view('movies.index', compact('movies'));
     }
 
-    /*metodo per avere dati del singolo film in una nuova route/pagina, che esegua un controllo nel caso
-    di inserimento indice da barra indirizzi. Se l'indice non esiste darà un errore 404 */
 
+    public function show($id)
+    {
+        $movie = Movie::find($id);
+        return view('movies.show', compact('movie'));
+    }
+
+    /* non è corretto usare come parametro l'indice (preso dal foreach) per isolare i singoli elementi. Meglio l'id.
+    metodo per avere dati del singolo film in una nuova route/pagina, che esegua un controllo nel caso
+    di inserimento indice da barra indirizzi. Se l'indice non esiste darà un errore 404
     public function show($movieIndex)
     {
         $movies = Movie::all();
@@ -35,5 +42,5 @@ class PageController extends Controller
         } else {
             return abort(404);
         }
-    }
+    } */
 }
